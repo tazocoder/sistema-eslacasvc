@@ -18,14 +18,13 @@ Route::get('/', function () {
 });
 */
 
-Route::get("/", [\App\Http\Controllers\PrincipalController::class,'principal']);
-Route::get("/sobre", [\App\Http\Controllers\SobreController::class,'sobre']);
-Route::get("/contato", [\App\Http\Controllers\ContatoController::class,'contato']);
+Route::get("/", [\App\Http\Controllers\PrincipalController::class, 'principal']);
+Route::get("/sobre", [\App\Http\Controllers\SobreController::class, 'sobre']);
+Route::get("/contato", [\App\Http\Controllers\ContatoController::class, 'contato']);
 // nome, categoria, assunto, msg
 
-Route::get('/contato/{nome}/{categoria}/{assunto}/{msg}', function(string $nome, string $categoria, string $assunto, string $msg) {
-    echo 'Bem-vindo, '.$nome.'. Categoria: '.$categoria.'. Assunto: '.$assunto.'. Mensagem: '.$msg;
-});
+Route::get('/escala', [\App\Http\Controllers\EscalaController::class, 'escala']);
+Route::get('/login', function(){ return 'Login';});
 
 /* 
 Route::get('/sobre', function () {
